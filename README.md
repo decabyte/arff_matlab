@@ -15,6 +15,9 @@ any external binding.
 
 For more info, look [here](http://decabyte.it/projects/arff-reader-writer-for-matlab/).
 
+Keep in mind that some features are missing but feel free of adding them
+or suggesting some changes by cloning the git repository and sending a pull request.
+
 ## Usage
 
 Look inside `examples` dir for a typical usage scenario or read

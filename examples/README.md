@@ -8,7 +8,7 @@ It comes with a couple of usage examples:
 * ARFF file writing
 * ARFF file reading
 
-Keep in mind that some feature is missing and the ARFF spec isn't completely 
+Keep in mind that some features are missing and the ARFF spec isn't completely 
 covered at this time. However for common operations (like parsing _numeric_, 
 _real_, _integer_, _string_, _date_ and last but not least 
 _nominal specification_ datatypes) and not-mission-critical use the whole lib is fine.
