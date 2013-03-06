@@ -5,6 +5,8 @@
 
 clear all; close all; clc;
 
+path(path, '..');
+
 %% import dataset
 infile = 'example_dataset.arff';
 

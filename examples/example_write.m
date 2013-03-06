@@ -5,6 +5,8 @@
 
 clear all; close all; clc;
 
+path(path, '..');
+
 %% create data structure
 data = struct();
 relname = sprintf('dataset_%s', datestr(now,'yyyymmdd'));

@@ -1,4 +1,4 @@
-@RELATION dataset_20130306
+@RELATION example_dataset
 
 @ATTRIBUTE idx NUMERIC
 @ATTRIBUTE low NUMERIC
