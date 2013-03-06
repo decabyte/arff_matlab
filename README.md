@@ -20,7 +20,7 @@ For more info about this project read [http://decabyte.it/projects/arff-reader-w
 
 ## Usage
 
-Look inside `examples` dir for a typical usage scenario or read
+Look inside [examples](examples) dir for a typical usage scenario or read
 the documentation of the reader function `help arff_read` and 
 the writer function `help arff_write`.
 
