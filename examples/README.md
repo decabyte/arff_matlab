@@ -13,7 +13,7 @@ covered at this time. However for common operations (like parsing _numeric_,
 _real_, _integer_, _string_, _date_ and last but not least 
 _nominal specification_ datatypes) and not-mission-critical use the whole lib is fine.
 
-Feel free of extending the support or adding the missing features by cloning
+Feel free to extend the support or add the missing features by cloning
 the git repository and sending a _pull request_.
 
 ## Writing
