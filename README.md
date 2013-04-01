@@ -16,7 +16,7 @@ any external binding.
 Keep in mind that some features are missing but feel free to add them
 or suggest some changes by cloning the git repository and sending a pull request.
 
-For more info about this project read [http://decabyte.it/projects/arff-reader-writer-for-matlab/](http://decabyte.it/projects/arff-reader-writer-for-matlab/).
+For more info about this project: [http://decabyte.it/projects/arff-reader-writer-for-matlab/](http://decabyte.it/projects/arff-reader-writer-for-matlab/).
 
 ## Usage
 
