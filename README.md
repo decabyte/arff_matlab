@@ -22,7 +22,7 @@ For more info about this project: [http://decabyte.it/projects/arff-reader-write
 
 Look inside [examples](examples) dir for a typical usage scenario or read
 the documentation of the reader function `help arff_read` and 
-the writer function `help arff_write`.
+the writer function `help arff_write`. Inside [extras](extras) dir one can find additional scripts (thank to the other contributors) which extend the basic features of the import/export functions. Feel free to adapt them to your personal workflow.
 
 ## References
 
