@@ -35,8 +35,9 @@ function [data, relname, nomspec] = arff_read(arff_file)
         
     elseif strcmpi(ext,'.gz')
         
-        % temporary working dir
-        outdir = tempdir;
+        % use unique temp dir
+        %   support multiple calls of arff_read in parallel with the same input file
+        outdir = tempname;
         
         % decompress
         dec_files = gunzip(arff_file, outdir);
@@ -152,9 +153,22 @@ function [data, relname, nomspec] = arff_read(arff_file)
     data = struct();
     
     for fn = 1 : length(fields)
+        % Erase '[]().'
+        if ~isempty(find(fields{fn}=='[' | fields{fn}==']' | fields{fn}=='(' | fields{fn}==')' | fields{fn}=='.'))
+            s = fields{fn};
+            fields{fn} = s(s~='[' & s~=']' & s~='(' & s~=')' & s~='.');
+        end
+
+        % Replace '-' with '_'
+        if ismember('-',fields{fn})
+            s = fields{fn};
+            s(strfind(s,'-')) = '_';
+            fields{fn} = s;
+        end
+        
         data.(fields{fn}) = [];
     end
-    
+        
     % store empty struct
     data_tmpl = data;
        
@@ -231,9 +245,10 @@ function [data, relname, nomspec] = arff_read(arff_file)
     % close file
     fclose(fid);
     
-    % remove temporary decompressed file
+    % remove temporary directory and decompressed file
     if exist('dec_files','var') && ~isempty(dec_files)
         delete(dec_files{1});
+        rmdir(outdir, 's');
     end
 
 end
