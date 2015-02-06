@@ -57,8 +57,10 @@ function [] = arff_write(arff_file, data, relname, nomspec)
         
     elseif strcmpi(ext,'.gz')
         
-        % temp file
-        outfile = fullfile(tempdir, arff_name);
+        % temp file using unique temp dir
+        %   support multiple calls of arff_write in parallel with the same input file
+        outdir = tempname;
+        outfile = fullfile(outdir, arff_name);
         
         % open file
         fid = fopen(outfile, 'w+t');
@@ -171,6 +173,7 @@ function [] = arff_write(arff_file, data, relname, nomspec)
     if exist('outfile','var') && ~isempty(outfile)
         gzip(outfile, arff_path);
         delete(outfile);
+        rmdir(outdir,'s');
     end
 
 end
