@@ -69,6 +69,13 @@ function [] = arff_write(arff_file, data, relname, nomspec)
         error('%s is not a valid arff_file', arff_file);
     end
     
+    % if relname contains spaces check that is quoted
+    % if not add them
+    quoted = strcmp('""', [relname(1) relname(end)]);
+    if nnz(isspace(relname)) && ~quoted
+        relname = ['"' relname '"'];
+    end
+
     % write relname
     fprintf(fid, '@RELATION %s\n\n', relname);
     
